@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jacko | Multiservice</title>
+
+  <style>
+    :root {
+      --primary: #7B1E2B;
+      --primary-dark: #5B0F1A;
+      --background: #F7F7F7;
+      --text: #111111;
+      --muted: #A3A9B3;
+      --card: #ffffff;
+    }
+
+    [data-theme="dark"] {
+      --background: #0D1117;
+      --text: #E6EAF2;
+      --card: #161B22;
+      --muted: #8A8F98;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      transition: 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      background: var(--card);
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .hero {
+      padding: 60px 40px;
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-right: 10px;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: var(--card);
+      color: var(--text);
+    }
+
+    section {
+      padding: 50px 40px;
+      max-width: 1000px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Jacko Multiservice</div>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+</header>
+
+<div class="hero">
+  <h1>Ingeniero & Multiservicios</h1>
+  <p>
+    Desarrollo soluciones digitales y servicios técnicos integrales: software, soporte,
+    instalación, remodelación y más. Un solo contacto, múltiples soluciones.
+  </p>
+
+  <div class="buttons">
+    <a href="#" class="btn btn-primary">Ver proyectos</a>
+    <a href="#" class="btn btn-secondary">Contactar</a>
+  </div>
+</div>
+
+<section>
+  <h2>🔗 Enlaces rápidos</h2>
+  <div class="grid">
+    <div class="card">Portafolio</div>
+    <div class="card">Apps</div>
+    <div class="card">Servicios</div>
+    <div class="card">Contacto</div>
+  </div>
+</section>
+
+<section>
+  <h2>👋 Sobre mí</h2>
+  <p>
+    Ingeniero en computación e informática con experiencia en desarrollo .NET,
+    soporte técnico y soluciones prácticas. Actualmente en actualización con IA
+    y desarrollo moderno.
+  </p>
+</section>
+
+<section>
+  <h2>🧠 Habilidades</h2>
+  <div class="grid">
+    <div class="card">.NET / C#</div>
+    <div class="card">Apps multiplataforma</div>
+    <div class="card">Soporte técnico</div>
+    <div class="card">Photoshop</div>
+  </div>
+</section>
+
+<section>
+  <h2>🚀 Proyectos destacados</h2>
+  <div class="grid">
+    <div class="card">Board Galaxy</div>
+    <div class="card">SuiteSoft</div>
+    <div class="card">MiTarjeta</div>
+  </div>
+</section>
+
+<section>
+  <h2>📱 Apps</h2>
+  <p>
+    Desarrollo aplicaciones útiles, enfocadas en resolver problemas reales.
+  </p>
+</section>
+
+<section>
+  <h2>🛠 Servicios</h2>
+  <div class="grid">
+    <div class="card">Computación y laptops</div>
+    <div class="card">Instalación CCTV / redes</div>
+    <div class="card">Electricidad</div>
+    <div class="card">Plomería</div>
+    <div class="card">Remodelación</div>
+    <div class="card">Jardinería</div>
+  </div>
+</section>
+
+<section>
+  <h2>💡 Qué me diferencia</h2>
+  <p>
+    Combino tecnología con soluciones prácticas. Puedo desarrollar software y también
+    resolver problemas físicos. Adaptabilidad, enfoque real y ejecución.
+  </p>
+</section>
+
+<section>
+  <h2>🧾 Experiencia</h2>
+  <p>
+    +3 años de experiencia en desarrollo .NET y soporte técnico.
+    Actualmente en actualización en inteligencia artificial y nuevas tecnologías.
+  </p>
+</section>
+
+<footer>
+  © 2026 Jacko Multiservice
+</footer>
+
+<script>
+  const userPref = localStorage.getItem("theme");
+
+  if (userPref) {
+    document.documentElement.setAttribute("data-theme", userPref);
+  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
+
+  function toggleTheme() {
+    let current = document.documentElement.getAttribute("data-theme");
+    let newTheme = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  }
+</script>
+
+</body>
+</html>
