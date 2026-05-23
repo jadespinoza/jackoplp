@@ -1,434 +1,228 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Nombre | Ingeniero & Especialista Técnico</title>
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>Jacko Multiservice | Tecnología, Soluciones y Confianza</title>
     
-    <style>
-        /* VARIABLES DE COLOR - SISTEMA DE TEMAS */
-        :root {
-            /* Modo Claro (Default) */
-            --primary: #7B1E2B;
-            --primary-hover: #5a151f;
-            --primary-light: #fdf2f3;
-            --bg-body: #FFFFFF;
-            --bg-section: #F7F7F7;
-            --text-main: #111111;
-            --text-muted: #444444;
-            --white: #FFFFFF;
-            --card-bg: #FFFFFF;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
-            --border: #eeeeee;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        [data-theme="dark"] {
-            /* Modo Oscuro */
-            --bg-body: #0f0f0f;
-            --bg-section: #1a1a1a;
-            --primary-light: #3d1016;
-            --text-main: #f0f0f0;
-            --text-muted: #b0b0b0;
-            --white: #1a1a1a;
-            --card-bg: #222222;
-            --shadow: 0 10px 30px rgba(0,0,0,0.4);
-            --border: #333333;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            transition: background-color 0.4s, color 0.4s;
-        }
-
-        /* --- NAVEGACIÓN --- */
-        nav {
-            background: var(--bg-body);
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* TEMA TOGGLE BOTÓN */
-        .theme-toggle {
-            background: var(--bg-section);
-            border: 1px solid var(--border);
-            width: 45px;
-            height: 45px;
-            border-radius: 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-        
-        .theme-toggle:hover {
-            transform: scale(1.05);
-            background: var(--primary-light);
-        }
-
-        /* --- SECCIONES COMUNES --- */
-        section { padding: 80px 10%; }
-        .section-alt { background-color: var(--bg-section); }
-        .section-accent { background-color: var(--primary-light); }
-        .container { max-width: 1100px; margin: 0 auto; }
-        h1, h2, h3 { line-height: 1.2; margin-bottom: 1.5rem; }
-
-        .badge {
-            display: inline-block;
-            background: var(--primary-light);
-            color: var(--primary);
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        /* --- BOTONES --- */
-        .btn {
-            display: inline-block;
-            padding: 16px 32px;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 700;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(123, 30, 43, 0.2);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            margin-left: 10px;
-        }
-
-        /* --- HERO --- */
-        #about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 50px;
-            padding-top: 60px;
-        }
-
-        .hero-content h1 { font-size: 3rem; font-weight: 800; }
-        .hero-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-        .hero-image img { width: 100%; border-radius: 20px; box-shadow: var(--shadow); filter: grayscale(20%); }
-
-        /* --- SKILLS --- */
-        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
-        .skill-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-        .skill-card h3 { color: var(--primary); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; }
-        .skill-list { list-style: none; }
-        .skill-list li { margin-bottom: 12px; display: flex; align-items: center; font-weight: 500; }
-        .skill-list li::before { content: "✅"; margin-right: 10px; }
-
-        blockquote {
-            margin-top: 30px;
-            border-left: 4px solid var(--primary);
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            color: var(--primary);
-            font-style: italic;
-        }
-
-        /* --- PROYECTOS & APPS --- */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            transition: var(--transition);
-        }
-        .project-card:hover { transform: translateY(-10px); }
-        .project-info { padding: 25px; }
-        .project-link { color: var(--primary); text-decoration: none; font-weight: 800; }
-
-        /* --- DIFERENCIACIÓN --- */
-        .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
-        .diff-card h4 { color: var(--primary); font-size: 1.2rem; margin-bottom: 10px; }
-
-        /* --- WHATSAPP --- */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            text-decoration: none;
-            font-size: 30px;
-            transition: var(--transition);
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 15px; padding: 1rem; }
-            #about { grid-template-columns: 1fr; text-align: center; }
-            .hero-content h1 { font-size: 2.2rem; }
-            .nav-links { font-size: 0.7rem; gap: 10px; }
-            .btn { width: 100%; margin-left: 0; margin-top: 10px; }
-        }
-    </style>
+    <!-- Fuentes (Inter) e Iconos (FontAwesome) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Vinculación del CSS Externo -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <!-- NAVEGACIÓN -->
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#projects">💻 Proyectos</a></li>
-            <li><a href="#apps">📱 Apps</a></li>
-            <li><a href="#skills">🔧 Servicios</a></li>
-            <li><a href="#contact">📬 Contacto</a></li>
-        </ul>
-        <button class="theme-toggle" id="theme-btn" title="Cambiar modo">
-            <span id="theme-icon">🌙</span>
-        </button>
-    </nav>
+    <header>
+        <nav class="container">
+            <div class="logo">JACKO <span>MULTISERVICE</span></div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Inicio</a></li>
+		<li><a href="#">Sobre mí</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-btn" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="https://wa.me/18097812165" class="btn-premium">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </nav>
+    </header>
 
-    <!-- SOBRE MÍ (HERO) -->
-    <section id="about">
-        <div class="hero-content">
-            <span class="badge">👋 SOBRE MÍ</span>
-            <h1>Ingeniero en computación que también sabe usar las manos.</h1>
-            <p>Soy <strong>[Tu Nombre]</strong>. Ingeniero en Computación e Informática con 3 años de experiencia en desarrollo .NET, diseño con Photoshop y soporte técnico especializado.</p>
-            <p>Actualmente me estoy actualizando activamente en Inteligencia Artificial. No solo escribo código, resuelvo problemas en el mundo real: desde redes y cámaras hasta remodelaciones físicas.</p>
-            
-            <a href="https://wa.me/+18097812165?text=Hola%2C%20quiero%20informacion" class="btn">Hablemos →</a>
-        </div>
-        <div class="hero-image">
-            <img src="https://placehold.co/600x600/7B1E2B/FFFFFF?text=Tu+Foto+Profesional" alt="[Tu Nombre]">
-        </div>
-    </section>
-
-    <!-- HABILIDADES -->
-    <section id="skills" class="section-alt">
-        <div class="container">
-            <span class="badge">🧠 HABILIDADES</span>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Desarrollo & Tecnología</h3>
-                    <ul class="skill-list">
-                        <li>.NET / C# / ASP.NET</li>
-                        <li>Photoshop / Edición Gráfica</li>
-                        <li>Soporte técnico PC/Laptop</li>
-                        <li>Instalación de redes LAN/WiFi</li>
-                        <li>Cámaras CCTV e IP</li>
-                        <li>Inteligencia Artificial aplicada</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Servicios Técnicos</h3>
-                    <ul class="skill-list">
-                        <li>Electricidad y Plomería</li>
-                        <li>Remodelación de espacios</li>
-                        <li>Instalación de accesorios</li>
-                        <li>Jardinería y mantenimiento</li>
-                    </ul>
+    <main class="container">
+        
+        <!-- SECCIÓN HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">SOLUCIONES INTELIGENTES</span>
+                <h1>Tecnología.<br>Soluciones.<br><span class="text-wine">Confianza.</span></h1>
+                <p>Servicios técnicos, desarrollo de software y soluciones para el hogar y tu negocio.</p>
+                <div class="hero-btns">
+                    <a href="#" class="btn-premium">Escríbeme por WhatsApp <i class="fab fa-whatsapp"></i></a>
+                    <a href="#servicios" class="btn-outline">Ver servicios <i class="fas fa-arrow-down"></i></a>
                 </div>
             </div>
-            <blockquote>"No subcontrato. Hago el trabajo yo mismo."</blockquote>
-        </div>
-    </section>
+            <div class="hero-img-container">
+                <!-- Imagen del logo 3D central -->
+                <img src="assets/img/logo3d.png" alt="Logo Jacko" class="hero-img">
+                <div class="hero-glow"></div>
+            </div>
+        </section>
 
-    <!-- PROYECTOS -->
-    <section id="projects">
-        <div class="container">
-            <span class="badge">🚀 PROYECTOS DESTACADOS</span>
+        <!-- ACCESO RÁPIDO -->
+        <section class="quick-access">
+            <div class="quick-grid">
+                <div class="q-card">
+                    <i class="fas fa-toolbox"></i>
+                    <div class="q-info"><h4>Jacko Multiservice</h4><p>Servicios para tu hogar</p></div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+                <div class="q-card">
+                    <i class="fas fa-code"></i>
+                    <div class="q-info"><h4>Servicios Técnicos</h4><p>Soporte y mantenimiento</p></div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+                <div class="q-card">
+                    <i class="fas fa-mobile-screen"></i>
+                    <div class="q-info"><h4>Apps & Desarrollo</h4><p>Soluciones digitales</p></div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+                <div class="q-card">
+                    <i class="fas fa-gamepad"></i>
+                    <div class="q-info"><h4>Proyectos Gaming</h4><p>Juegos & Entretenimiento</p></div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+                <div class="q-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <div class="q-info"><h4>Fundación / ECO</h4><p>Acciones que suman</p></div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+                <div class="q-card">
+                    <i class="fas fa-hashtag"></i>
+                    <div class="q-info"><h4>Redes Sociales</h4><p>Conecta conmigo</p></div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SERVICIOS -->
+        <section id="servicios" class="section-padding">
+            <div class="section-header">
+                <div><span class="badge">LO QUE HAGO</span><h2>Servicios</h2><p>Soluciones profesionales con calidad y garantía.</p></div>
+                <a href="#" class="view-all">Ver todos los servicios &rarr;</a>
+            </div>
+            <div class="services-grid">
+                <div class="service-card"><i class="fas fa-bolt"></i><h3>Electricidad</h3><p>Instalaciones y arreglos.</p></div>
+                <div class="service-card"><i class="fas fa-faucet"></i><h3>Plomería</h3><p>Tuberías y filtraciones.</p></div>
+                <div class="service-card"><i class="fas fa-paint-roller"></i><h3>Remodelación</h3><p>Mejoramos tus espacios.</p></div>
+                <div class="service-card"><i class="fas fa-desktop"></i><h3>Computación</h3><p>Soporte y formateo.</p></div>
+                <div class="service-card"><i class="fas fa-wifi"></i><h3>Redes</h3><p>Instalación de internet.</p></div>
+                <div class="service-card"><i class="fas fa-video"></i><h3>Cámaras</h3><p>Seguridad y monitoreo.</p></div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS DESTACADOS -->
+        <section id="proyectos" class="section-padding">
+            <div class="section-header">
+                <div><span class="badge">MIS PROYECTOS</span><h2>Proyectos Destacados</h2></div>
+            </div>
             <div class="projects-grid">
+		<div class="project-card">
+    		<div class="p-img">
+        		<!-- Badge de versión actual encima de la imagen -->
+        		<span class="version-tag">v2.4.0</span>
+    		</div>
+   		<div class="p-info">
+        		<div class="p-title-row">
+            		<h4>MyPLP</h4>
+            		<!-- SELECTOR DE VERSIONES -->
+            		<select class="version-select">
+                		<option value="v3">Versión 3.0 (Actual)</option>
+                		<option value="v1">Versión 2.0 (Legacy)</option>
+                		<option value="v1">Versión 1.0 (Legacy)</option>
+                		<option value="beta">Beta Testing</option>
+            		</select>
+        		</div>
+        		<p>App de tarjetas digitales con tecnología .NET MAUI.</p>
+    		</div>
+		</div>
                 <div class="project-card">
-                    <img src="https://placehold.co/600x400/7B1E2B/FFFFFF?text=Software+Solution" class="project-img" style="width:100%">
-                    <div class="project-info">
-                        <h3>[Nombre del proyecto]</h3>
-                        <p>Descripción del problema resuelto y tecnología usada.</p>
-                        <a href="#" class="project-link">🔗 Ver proyecto</a>
-                    </div>
+                    <div class="p-img"></div>
+                    <div class="p-info"><h4>MiTarjeta</h4><p>App de tarjetas digitales con .NET MAUI</p></div>
                 </div>
                 <div class="project-card">
-                    <img src="https://placehold.co/600x400/333333/FFFFFF?text=Infraestructura" class="project-img" style="width:100%">
-                    <div class="project-info">
-                        <h3>[Nombre del proyecto]</h3>
-                        <p>Descripción del problema resuelto y tecnología usada.</p>
-                        <a href="#" class="project-link">🔗 Ver proyecto</a>
-                    </div>
+                    <div class="p-img"></div>
+                    <div class="p-info"><h4>SuiteSoft</h4><p>Sistema de gestión empresarial</p></div>
+                </div>
+                <div class="project-card">
+                    <div class="p-img"></div>
+                    <div class="p-info"><h4>Board Deck</h4><p>Juego de mesa digital multijugador</p></div>
+                </div>
+                <div class="project-card">
+                    <div class="p-img"></div>
+                    <div class="p-info"><h4>064 Secret Agent</h4><p>Juego de sigilo y estrategia</p></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- APPS -->
-    <section id="apps" class="section-accent">
-        <div class="container">
-            <span class="badge">📱 APPS</span>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>[Nombre de la app]</h3>
-                    <p>Qué hace · Para quién es · Plataforma</p>
-                    <br>
-                    <a href="#" class="project-link">🔗 Probar app</a>
+        <!-- TESTIMONIOS -->
+        <section class="section-padding">
+            <div class="section-header">
+                <div><span class="badge">LO QUE DICEN</span><h2>Clientes Satisfechos</h2></div>
+            </div>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Excelente servicio, rápido y muy profesional."</p>
+                    <div class="user"><h5>María Fernández</h5><span>Barahona</span></div>
                 </div>
-                <div class="skill-card">
-                    <h3>[Nombre de la app]</h3>
-                    <p>Qué hace · Para quién es · Plataforma</p>
-                    <br>
-                    <a href="#" class="project-link">🔗 Probar app</a>
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Solucionó mi problema en minutos. Recomendado."</p>
+                    <div class="user"><h5>Carlos Méndez</h5><span>Barahona</span></div>
+                </div>
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Muy buen trabajo en la instalación de cámaras."</p>
+                    <div class="user"><h5>Luis Pérez</h5><span>Barahona</span></div>
+                </div>
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Su trabajo en desarrollo de apps es increíble."</p>
+                    <div class="user"><h5>Ana Gómez</h5><span>Barahona</span></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- DIFERENCIACIÓN -->
-    <section>
-        <div class="container">
-            <span class="badge">⚡ QUÉ ME DIFERENCIA</span>
-            <h2>La mayoría hace una sola cosa. Yo entrego soluciones completas.</h2>
-            <div class="diff-grid">
-                <div class="diff-card">
-                    <h4>Perfil híbrido real.</h4>
-                    <p>Entiendo el negocio, la tecnología y la infraestructura al mismo tiempo.</p>
+        <!-- CTA FINAL -->
+        <section class="cta-section">
+            <div class="cta-box">
+                <div class="cta-text">
+                    <h3>¿Listo para empezar tu próximo proyecto?</h3>
+                    <p>Hablemos de tus ideas y las convertimos en realidad.</p>
                 </div>
-                <div class="diff-card">
-                    <h4>Sin intermediarios.</h4>
-                    <p>Hablas conmigo, trabajas conmigo. Compromiso directo.</p>
-                </div>
-                <div class="diff-card">
-                    <h4>Entrego, no prometo.</h4>
-                    <p>Si acepto un proyecto, lo termino con calidad profesional.</p>
+                <div class="cta-contact">
+                    <div class="c-info"><span>WhatsApp</span><p class="text-wine">+1 809 781 2165</p></div>
+                    <a href="#" class="btn-premium">Escríbeme ahora <i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FOOTER / CTA -->
-    <section id="contact" class="section-alt" style="text-align: center;">
-        <div class="container">
-            <span class="badge">🎓 CREDENCIALES</span>
-            <h3>Ingeniero en Computación e Informática</h3>
-            <p style="margin-bottom: 40px;">3 años de experiencia técnica + formación activa en IA.</p>
-            
-            <h2 style="font-size: 2.5rem;">¿Listo para trabajar juntos?</h2>
-            <p>Si el problema es real, tengo la solución.</p>
-            <br>
-            <a href="https://wa.me/+18097812165?text=Hola%2C%20quiero%20informacion" class="btn">📬 Contáctame Ahora →</a>
-        </div>
-    </section>
+    </main>
 
-    <footer style="padding: 40px; text-align: center; border-top: 1px solid var(--border);">
-        <p>&copy; 2024 [Tu Nombre]. Creado para convertir.</p>
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">JACKO <span>MULTISERVICE</span></div>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p>© 2026 Jacko Multiservice - Todos los derechos reservados.</p>
+        </div>
     </footer>
 
-    <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/+18097812165" class="whatsapp-float" target="_blank">📱</a>
-
-    <!-- LÓGICA DE TEMA (DARK/LIGHT) -->
+    <!-- Lógica de Modo Oscuro -->
     <script>
         const themeBtn = document.getElementById('theme-btn');
-        const themeIcon = document.getElementById('theme-icon');
-        const currentTheme = localStorage.getItem('theme');
+        const icon = themeBtn.querySelector('i');
+        const body = document.body;
 
-        // 1. Reconocimiento automático del sistema
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-        function setTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            themeIcon.innerText = theme === 'dark' ? '☀️' : '🌙';
-            localStorage.setItem('theme', theme);
-        }
-
-        // Inicialización
-        if (currentTheme) {
-            setTheme(currentTheme);
-        } else if (prefersDark.matches) {
-            setTheme('dark');
-        }
-
-        // 2. Botón de cambio manual
         themeBtn.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            if (theme === 'dark') {
-                setTheme('light');
+            body.classList.toggle('light-mode');
+            if(body.classList.contains('light-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
             } else {
-                setTheme('dark');
-            }
-        });
-
-        // 3. Escuchar cambios del sistema en tiempo real
-        prefersDark.addEventListener('change', e => {
-            if (!localStorage.getItem('theme')) {
-                setTheme(e.matches ? 'dark' : 'light');
+                icon.classList.replace('fa-sun', 'fa-moon');
             }
         });
     </script>
-
 </body>
 </html>
