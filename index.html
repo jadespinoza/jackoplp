@@ -3,35 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacko Multiservice | Tecnología y Soluciones</title>
+    <title>Jacko Multiservice</title>
     
-    <!-- Fuentes e Iconos -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link id="favicon" rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- CSS Externo -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="dark-mode">
 
-    <!-- NAVEGACIÓN -->
-    <header>
-        <nav class="container">
-            <div class="logo">JACKO <span>MULTISERVICE</span></div>
+    <header class="navbar">
+        <nav class="container nav-flex">
+            <a href="#" class="logo-area" id="top-logo">
+                <img src="assets/img/logo.png" alt="Logo" class="main-logo">
+            </a>
+            
             <ul class="nav-links">
-                <li><a href="#" class="active">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#">Sobre mí</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="#servicios">SERVICIOS</a></li>
+                <li><a href="#programacion">PROGRAMACIÓN</a></li>
+                <li><a href="#remodelacion">REMODELACIÓN</a></li>
             </ul>
+
             <div class="nav-actions">
-                <button id="theme-btn" class="theme-toggle">
-                    <i class="fas fa-moon"></i>
+                
+
+		<button id="theme-btn" class="theme-btn">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span>Tema</span>
                 </button>
-                <a href="https://wa.me/18097812165" class="btn-premium">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+
+
+                <a href="https://wa.me/+18097812165" target="_blank" class="btn-whatsapp-nav wa-btn">
+                    <i class="fab fa-whatsapp"></i>
                 </a>
+
+		<a href="https://wa.me/+18097812165" target="_blank" class="wa-icon-only" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
             </div>
         </nav>
     </header>
@@ -39,114 +48,99 @@
     <main class="container">
         
         <!-- HERO SECTION -->
-        <section class="hero">
-            <div class="hero-content">
-                <span class="badge">SOLUCIONES INTELIGENTES</span>
-                <h1>Tecnología.<br>Soluciones.<br><span class="text-wine">Confianza.</span></h1>
-                <p>Servicios técnicos, desarrollo de software y soluciones para el hogar y tu negocio.</p>
-                <div class="hero-btns">
-                    <a href="#" class="btn-premium">Escríbeme por WhatsApp</a>
-                    <a href="#servicios" class="btn-outline">Ver servicios <i class="fas fa-arrow-down"></i></a>
-                </div>
-            </div>
-            <div class="hero-img-container">
-                <img src="assets/img/logo3d.png" alt="Logo Jacko3D" class="hero-img">
+        <section class="hero reveal">
+            <h1>Soluciones Integrales en Remodelación<br>y Desarrollo de Software</h1>
+            <p>La artesanía de la construcción unida a la precisión digital para transformar tu visión en realidad.</p>
+            <div class="hero-btns">
+                <button class="btn-premium">Explorar Proyectos</button>
+                <button class="btn-outline">Contactar ahora</button>
             </div>
         </section>
 
-        <!-- ACCESO RÁPIDO (Grid 3x2) -->
-        <section class="quick-access">
-            <div class="quick-grid">
-                <div class="q-card"><i class="fas fa-toolbox"></i><div class="q-info"><h4>Jacko Multiservice</h4><p>Servicios para tu hogar</p></div><i class="fas fa-chevron-right arrow"></i></div>
-                <div class="q-card"><i class="fas fa-code"></i><div class="q-info"><h4>Servicios Técnicos</h4><p>Soporte y mantenimiento</p></div><i class="fas fa-chevron-right arrow"></i></div>
-                <div class="q-card"><i class="fas fa-mobile-screen"></i><div class="q-info"><h4>Apps & Desarrollo</h4><p>Soluciones digitales</p></div><i class="fas fa-chevron-right arrow"></i></div>
-                <div class="q-card"><i class="fas fa-gamepad"></i><div class="q-info"><h4>Proyectos Gaming</h4><p>Juegos & Entretenimiento</p></div><i class="fas fa-chevron-right arrow"></i></div>
-                <div class="q-card"><i class="fas fa-hand-holding-heart"></i><div class="q-info"><h4>Fundación / ECO</h4><p>Acciones que suman</p></div><i class="fas fa-chevron-right arrow"></i></div>
-                <div class="q-card"><i class="fas fa-hashtag"></i><div class="q-info"><h4>Redes Sociales</h4><p>Conecta conmigo</p></div><i class="fas fa-chevron-right arrow"></i></div>
-            </div>
-        </section>
-
-        <!-- SERVICIOS (Grid 6) -->
-        <section id="servicios" class="section-padding">
-            <div class="section-header">
-                <div><span class="badge">LO QUE HAGO</span><h2>Servicios</h2></div>
-                <a href="#" class="view-all">Ver todos los servicios &rarr;</a>
-            </div>
+        <!-- SECCIÓN SERVICIOS -->
+        <section id="servicios" class="section-reveal">
+            <h2 class="section-title">Nuestros Servicios</h2>
             <div class="services-grid">
-                <div class="service-card"><i class="fas fa-bolt"></i><h3>Electricidad</h3><p>Instalaciones y arreglos.</p></div>
-                <div class="service-card"><i class="fas fa-faucet"></i><h3>Plomería</h3><p>Tuberías y filtraciones.</p></div>
-                <div class="service-card"><i class="fas fa-paint-roller"></i><h3>Remodelación</h3><p>Mejoramos tus espacios.</p></div>
-                <div class="service-card"><i class="fas fa-desktop"></i><h3>Computación</h3><p>Soporte y formateo.</p></div>
-                <div class="service-card"><i class="fas fa-wifi"></i><h3>Redes</h3><p>Instalación de internet.</p></div>
-                <div class="service-card"><i class="fas fa-video"></i><h3>Cámaras</h3><p>Seguridad y monitoreo.</p></div>
+                <div class="service-item"><i class="fas fa-code"></i><span>Programación</span></div>
+                <div class="service-item"><i class="fas fa-paint-brush"></i><span>Diseño Gráfico</span></div>
+                <div class="service-item"><i class="fas fa-faucet"></i><span>Plomería</span></div>
+                <div class="service-item"><i class="fas fa-bolt"></i><span>Electricidad</span></div>
+                <div class="service-item"><i class="fas fa-hammer"></i><span>Carpintería</span></div>
+                <div class="service-item"><i class="fas fa-video"></i><span>Cámaras</span></div>
             </div>
         </section>
 
-        <!-- PROYECTOS (Incluyendo el Módulo PLP) -->
-        <section id="proyectos" class="section-padding">
-            <div class="section-header">
-                <div><span class="badge">MIS PROYECTOS</span><h2>Proyectos Destacados</h2></div>
-            </div>
-            <div class="projects-grid">
-                <!-- Tarjeta Especial PLP -->
-                <div class="project-card plp-card">
-                    <div class="p-img"><span class="badge-inside">HISTORIAL PLP</span></div>
-                    <div class="p-info">
-                        <h4>Proyecto PLP</h4>
-                        <p>Selecciona una versión para ver la evolución del sistema.</p>
-                        <div class="version-module">
-                            <select id="plp-version-selector" class="v-select">
-                                <option value="assets/projects/myplp/version/v3/index.html">Versión 3.0 (Actual)</option>
-                                <option value="assets/projects/myplp/version/v2/index.html">Versión 2.0 (Estable)</option>
-                                <option value="assets/projects/myplp/version/v1/index.html">Versión 1.0 (Inicial)</option>
+        <!-- SECCIÓN PROGRAMACIÓN -->
+        <section id="programacion" class="section-reveal">
+            <h2 class="section-title">Proyectos de Programación</h2>
+            <div class="horizontal-scroll">
+                <div class="premium-card plp-card">
+                    <div class="card-img-container">
+                        <img src="captura.jpg" id="plp-preview" alt="PLP Preview">
+                    </div>
+                    <div class="card-body">
+                        <h3>Proyecto PLP</h3>
+                        <div class="version-controls">
+                            <select id="plp-selector" onchange="updatePLPPreview()">
+                                <option value="current">Version 4.0 (Actual)</option>
+                                <option value="v3">Version 3.0</option>
+                                <option value="v2">Version 2.0</option>
+                                <option value="v1">Version 1.0</option>
                             </select>
-                            <button onclick="irAVersion()" class="btn-go-version">Ver</button>
+                            <button onclick="verVersion()" class="btn-v">VER</button>
                         </div>
                     </div>
                 </div>
-                <!-- Otros proyectos -->
-                <div class="project-card"><div class="p-img"></div><div class="p-info"><h4>MiTarjeta</h4><p>App de tarjetas digitales.</p></div></div>
-                <div class="project-card"><div class="p-img"></div><div class="p-info"><h4>SuiteSoft</h4><p>Sistema de gestión.</p></div></div>
-                <div class="project-card"><div class="p-img"></div><div class="p-info"><h4>Board Deck</h4><p>Juego de mesa digital.</p></div></div>
+                <div class="premium-card">
+                    <img src="https://via.placeholder.com/600x400/1e2e3e/fff?text=Dashboard" alt="App">
+                    <div class="card-body"><h3>Control Panel</h3><p>Gestión de datos avanzada.</p></div>
+                </div>
             </div>
         </section>
 
-        <!-- TESTIMONIOS -->
-        <section class="section-padding">
-            <div class="section-header"><div><span class="badge">LO QUE DICEN</span><h2>Clientes Satisfechos</h2></div></div>
-            <div class="testi-grid">
-                <div class="testi-card"><div class="stars">★★★★★</div><p>"Excelente servicio, rápido y muy profesional."</p><div class="user"><h5>María Fernández</h5><span>Barahona</span></div></div>
-                <div class="testi-card"><div class="stars">★★★★★</div><p>"Solucionó mi problema en minutos."</p><div class="user"><h5>Carlos Méndez</h5><span>Barahona</span></div></div>
-                <div class="testi-card"><div class="stars">★★★★★</div><p>"Muy buen trabajo en las cámaras."</p><div class="user"><h5>Luis Pérez</h5><span>Barahona</span></div></div>
-                <div class="testi-card"><div class="stars">★★★★★</div><p>"Increíble en desarrollo de apps."</p><div class="user"><h5>Ana Gómez</h5><span>Barahona</span></div></div>
-            </div>
-        </section>
-
-        <!-- CTA FINAL -->
-        <section class="cta-section">
-            <div class="cta-box">
-                <div class="cta-text"><h3>¿Listo para empezar tu próximo proyecto?</h3><p>Hablemos de tus ideas y las convertimos en realidad.</p></div>
-                <div class="cta-contact">
-                    <div class="c-info"><span>WhatsApp</span><p class="text-wine">+1 809 781 2165</p></div>
-                    <a href="#" class="btn-premium">Escríbeme ahora</a>
+        <!-- SECCIÓN REMODELACIÓN -->
+        <section id="remodelacion" class="section-reveal">
+            <h2 class="section-title">Remodelaciones Destacadas</h2>
+            <div class="horizontal-scroll">
+                <div class="premium-card">
+                    <img src="https://via.placeholder.com/600x400/122a46/fff?text=Cocina" alt="Cocina">
+                    <div class="card-body"><h3>Cocina Moderna</h3></div>
+                </div>
+                <div class="premium-card">
+                    <img src="https://via.placeholder.com/600x400/122a46/fff?text=Sala" alt="Sala">
+                    <div class="card-body"><h3>Espacios de Lujo</h3></div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="logo">JACKO <span>MULTISERVICE</span></div>
-            <div class="socials">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
-            <p>© 2026 Jacko Multiservice - Todos los derechos reservados.</p>
+    <!-- WIDGET ENCUÉNTRAME -->
+    <div class="find-widget collapsed" id="find-widget">
+        <div class="widget-header">
+            <span class="widget-label">Encuéntrame</span>
+            <button class="toggle-btn" onclick="toggleWidget()"><i class="fas fa-expand-alt" id="widget-icon"></i></button>
         </div>
-    </footer>
+        
+        <div class="widget-content">
+            <div class="expanded-info">
+                <div class="footer-logo-area">
+                    <!-- <img src="assets/img/logo.png" class="widget-logo" alt="Logo">-->
+                    <div class="brand-text">
+                        <span class="brand-name">JACKO MULTISERVICE</span>
+                        <span class="brand-email">info@jackomultiservice.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="social-bar">
+                <a href="#" class="social-link"><i class="fab fa-github"></i><span>GitHub</span></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+                <a href="https://wa.me/18097812165" class="social-link wa-item"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+                <a href="mailto:info@jackomultiservice.com" class="social-link"><i class="far fa-envelope"></i><span>Email</span></a>
+            </div>
+        </div>
+    </div>
 
-    <!-- JS Externo -->
     <script src="js/main.js"></script>
 </body>
 </html>
