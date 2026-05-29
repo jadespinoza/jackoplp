@@ -1,17 +1,22 @@
 {
   "name": "Jacko Multiservice",
   "short_name": "Jacko",
-  "description": "Soluciones Integrales en Remodelación y Software",
+  "description": "Soluciones Integrales",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#0a0a0a",
-  "theme_color": "#6B0F1A",
+  "theme_color": "#0a0a0a",
   "icons": [
     {
       "src": "assets/img/favicon.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/favicon.png",
+      "sizes": "382x382",
+      "type": "image/png"
     },
     {
       "src": "assets/img/favicon.png",
