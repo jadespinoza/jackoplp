@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image2Doc - Descargar para Windows, iOS y Android | Jacko Multiservice</title>
+    
+    <link id="favicon" rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Icono para navegadores -->
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="manifest" href="js/manifest.json">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+
+<body class="dark-mode">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <nav class="container nav-flex">
+            <a href="index.html#" class="logo-area" id="top-logo">
+                <img src="assets/img/logo.png" alt="Logo" class="main-logo">
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html#servicios">SERVICIOS</a></li>
+                <li><a href="index.html#programacion">PROGRAMACIÓN</a></li>
+                <li><a href="index.html#remodelacion">REMODELACIÓN</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="theme-btn" class="theme-btn">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span>Tema</span>
+                </button>
+                <a href="https://wa.me/+18097812165" target="_blank" class="wa-icon-only" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 100px;">
+        
+        <!-- REGRESAR -->
+        <a href="index.html#programacion" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver a Proyectos de Programación
+        </a>
+
+        <!-- HERO SECTION IMAGE2DOC -->
+        <section class="download-hero reveal">
+            <span class="badge" style="background-color: var(--accent); color: #fff; padding: 6px 16px; border-radius: 20px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">
+                SOFTWARE OFICIAL
+            </span>
+            <h1>Image2Doc</h1>
+            <p>Transforma tus imágenes, capturas y documentos escaneados en archivos editables de Word, PDF con texto reconocible (OCR) y formatos de texto plano con máxima velocidad y precisión.</p>
+        </section>
+
+        <!-- SHOWCASE & FEATURES -->
+        <section class="image2doc-showcase section-reveal">
+            <div>
+                <img src="assets/img/image2doc.png" alt="Image2Doc Showcase">
+            </div>
+            <div class="showcase-info">
+                <h2>Reconocimiento Inteligente OCR</h2>
+                <p style="opacity: 0.8; font-size: 0.95rem; line-height: 1.6;">
+                    Diseñado para profesionales, estudiantes y empresas que buscan digitalizar rápidamente facturas, notas de estudio, libros, recibos y capturas de pantalla sin perder el formato original.
+                </p>
+
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-bolt"></i>
+                        <h4>OCR Ultra Rápido</h4>
+                        <p>Reconocimiento de texto en más de 30 idiomas en milisegundos.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-file-export"></i>
+                        <h4>Formatos Múltiples</h4>
+                        <p>Exporta directamente a Word (.docx), PDF editable y TXT.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>100% Privado</h4>
+                        <p>Procesamiento directo en tu dispositivo sin subir tus datos.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-layer-group"></i>
+                        <h4>Conversión por Lotes</h4>
+                        <p>Procesa múltiples imágenes o carpetas de una sola vez.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE DESCARGAS -->
+        <section id="descargas" class="download-section section-reveal">
+            <h2 class="section-title">Descargar Image2Doc</h2>
+            <p style="opacity: 0.7; margin-bottom: 20px;">Elige la versión correspondiente a tu dispositivo o sistema operativo:</p>
+
+            <div class="download-grid">
+                
+                <!-- CARD WINDOWS -->
+                <div class="download-card">
+                    <div>
+                        <i class="fab fa-windows platform-icon"></i>
+                        <h3>Windows</h3>
+                        <span class="platform-badge">PC Desktop • v2.4.0</span>
+                        
+                        <ul class="spec-list">
+                            <li><i class="fas fa-check-circle"></i> Windows 10 / 11 (64-bit)</li>
+                            <li><i class="fas fa-check-circle"></i> Tamaño: 45.8 MB</li>
+                            <li><i class="fas fa-check-circle"></i> Instalador oficial ejecutable (.exe)</li>
+                            <li><i class="fas fa-check-circle"></i> Motor OCR multihilo incluido</li>
+                        </ul>
+                    </div>
+                    <button onclick="downloadApp('Windows')" class="btn-download btn-win">
+                        <i class="fas fa-download"></i> Descargar para Windows
+                    </button>
+                </div>
+
+                <!-- CARD IOS -->
+                <div class="download-card">
+                    <div>
+                        <i class="fab fa-apple platform-icon"></i>
+                        <h3>iOS / iPadOS</h3>
+                        <span class="platform-badge">iPhone / iPad • v2.4.0</span>
+                        
+                        <ul class="spec-list">
+                            <li><i class="fas fa-check-circle"></i> Requiere iOS 15.0 o posterior</li>
+                            <li><i class="fas fa-check-circle"></i> Disponible en App Store / TestFlight</li>
+                            <li><i class="fas fa-check-circle"></i> Escaneo directo desde la cámara</li>
+                            <li><i class="fas fa-check-circle"></i> Sincronización iCloud disponible</li>
+                        </ul>
+                    </div>
+                    <button onclick="downloadApp('iOS')" class="btn-download btn-ios">
+                        <i class="fab fa-apple"></i> Descargar para iOS
+                    </button>
+                </div>
+
+                <!-- CARD ANDROID -->
+                <div class="download-card">
+                    <div>
+                        <i class="fab fa-android platform-icon"></i>
+                        <h3>Android</h3>
+                        <span class="platform-badge">Móvil / Tablet • v2.4.0</span>
+                        
+                        <ul class="spec-list">
+                            <li><i class="fas fa-check-circle"></i> Android 8.0 Oreo o superior</li>
+                            <li><i class="fas fa-check-circle"></i> Tamaño: 28.4 MB (.apk)</li>
+                            <li><i class="fas fa-check-circle"></i> Modo offline autónomo</li>
+                            <li><i class="fas fa-check-circle"></i> Compatible con escáner móvil</li>
+                        </ul>
+                    </div>
+                    <button onclick="downloadApp('Android')" class="btn-download btn-android">
+                        <i class="fas fa-file-download"></i> Descargar APK Android
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SOPORTE Y CONTACTO -->
+        <section class="section-reveal" style="padding-bottom: 100px;">
+            <div style="background: var(--card-bg); border: 1px solid var(--border); border-left: 6px solid var(--accent); padding: 35px; border-radius: 24px; display: flex; flex-direction: column; md:flex-row; align-items: center; justify-content: space-between; gap: 20px; text-align: left;">
+                <div>
+                    <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 8px;">¿Necesitas una licencia corporativa o ayuda de instalación?</h3>
+                    <p style="opacity: 0.75; font-size: 0.9rem;">Soporte técnico directo de Jacko Multiservice disponible las 24 horas.</p>
+                </div>
+                <a href="https://wa.me/+18097812165?text=Hola%20Jacko%2C%20tengo%20una%20consulta%20sobre%20Image2Doc." target="_blank" class="btn-premium" style="shrink: 0; text-decoration: none;">
+                    <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- WIDGET ENCUÉNTRAME -->
+    <div class="find-widget collapsed" id="find-widget">
+        <div class="widget-header">
+            <span class="widget-label">Encuéntrame</span>
+            <button class="toggle-btn" onclick="toggleWidget()"><i class="fas fa-expand-alt" id="widget-icon"></i></button>
+        </div>
+        
+        <div class="widget-content">
+            <div class="expanded-info">
+                <div class="footer-logo-area">
+                    <div class="brand-text">
+                        <span class="brand-name">JACKO MULTISERVICE</span>
+                        <span class="brand-email">info@jackomultiservice.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="social-bar">
+                <a href="#" class="social-link"><i class="fab fa-github"></i><span>GitHub</span></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+                <a href="https://wa.me/18097812165" target="_blank" class="social-link wa-item"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+                <a href="mailto:info@jackomultiservice.com" class="social-link"><i class="far fa-envelope"></i><span>Email</span></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
