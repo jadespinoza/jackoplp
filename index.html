@@ -82,9 +82,21 @@
 
         <!-- SECCIÓN PROGRAMACIÓN -->
         <section id="programacion" class="section-reveal">
-            <h2 class="section-title">Proyectos de Programación</h2>
-            <div class="horizontal-scroll">
-                <div class="premium-card plp-card">
+            <div class="section-header-flex">
+                <h2 class="section-title">Proyectos de Programación</h2>
+                <div class="scroll-controls">
+                    <button onclick="scrollHorizontal('prog-scroll', -380)" class="scroll-arrow" title="Anterior"><i class="fas fa-chevron-left"></i></button>
+                    <button onclick="scrollHorizontal('prog-scroll', 380)" class="scroll-arrow" title="Siguiente"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- BARRA DE DESPLAZAMIENTO SUPERIOR -->
+            <div class="scroll-track-bar" onclick="scrollToTrackPosition('prog-scroll', this, event)" title="Deslizar para explorar">
+                <div class="scroll-track-thumb" id="prog-scroll-thumb"></div>
+            </div>
+
+            <div class="horizontal-scroll" id="prog-scroll" onscroll="updateScrollThumb('prog-scroll', 'prog-scroll-thumb')">
+                <div class="plp-card">
                     <div class="card-img-container">
                         <img src="captura.jpg" id="plp-preview" alt="PLP Preview">
                     </div>
@@ -102,30 +114,68 @@
                     </div>
                 </div>
 
-		<!-- PROYECTO IMAGE2DOC -->
-                <div class="premium-card image2doc-card">
-                    <a href="image2doc.html" class="card-img-link" title="Ver Image2Doc">
-                        <img src="assets/img/image2doc.png" alt="Image2Doc Preview">
+                <!-- PROYECTO IMAGE2DOC -->
+                <div class="clickable-card image2doc-card" onclick="navigateCard('view/programacion/image2doc.html', event)">
+                    <a href="view/programacion/image2doc.html" class="card-img-link" title="Ver Image2Doc">
+                        <img src="assets/projects/image2doc/image2doc.png" alt="Image2Doc Preview">
                     </a>
                     <div class="card-body">
                         <h3>Image2Doc</h3>
-                        <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 15px;">Conversor Inteligente de Imágenes a Documentos (PDF, Word, OCR).</p>
+                        <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 15px;">Convierte. Organiza. Exporta imágenes a PDF y DOC en segundos.</p>
                         <div class="version-controls">
-                            <a href="image2doc.html" class="btn-v" style="width: 100%;">VER Y DESCARGAR</a>
+                            <a href="view/programacion/image2doc.html" class="btn-v" style="width: 100%;">VER Y DESCARGAR</a>
                         </div>
                     </div>
                 </div>
-                <div class="premium-card">
-                    <img src="https://via.placeholder.com/600x400/1e2e3e/fff?text=Dashboard" alt="App">
-                    <div class="card-body"><h3>Control Panel</h3><p>Gestión de datos avanzada.</p></div>
+
+                <!-- PROYECTO CRONOS -->
+                <div class="clickable-card cronos-card" onclick="navigateCard('view/programacion/cronos.html', event)">
+                    <a href="view/programacion/cronos.html" class="card-img-link" title="Ver Cronos">
+                        <img src="assets/projects/cronos/cronos.png" alt="Cronos Preview">
+                    </a>
+                    <div class="card-body">
+                        <h3>Cronos</h3>
+                        <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 15px;">Red Social Fitness, Cronómetro por Ejercicio y Rutinas.</p>
+                        <div class="version-controls">
+                            <a href="view/programacion/cronos.html" class="btn-v" style="width: 100%;">VER Y DESCARGAR</a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- PROYECTO RESISTE+ -->
+                <div class="clickable-card resiste-card" onclick="navigateCard('view/programacion/resiste.html', event)">
+                    <a href="view/programacion/resiste.html" class="card-img-link" title="Ver Resiste+">
+                        <img src="assets/projects/resiste/resiste.png" alt="Resiste+ Preview">
+                    </a>
+                    <div class="card-body">
+                        <h3>RESISTE+</h3>
+                        <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 15px;">Plataforma Inteligente de Emergencia y Ayuda Comunitaria.</p>
+                        <div class="version-controls">
+                            <a href="view/programacion/resiste.html" class="btn-v" style="width: 100%; background: #e53935; box-shadow: 0 0 0 2px var(--gap-color), 2px -2px 0 2px #e53935, -1px 1px 0 2px #e53935;">VER Y DESCARGAR</a>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </section>
 
         <!-- SECCIÓN REMODELACIÓN -->
         <section id="remodelacion" class="section-reveal">
-            <h2 class="section-title">Remodelaciones Destacadas</h2>
-            <div class="horizontal-scroll">
+            <div class="section-header-flex">
+                <h2 class="section-title">Remodelaciones Destacadas</h2>
+                <div class="scroll-controls">
+                    <button onclick="scrollHorizontal('remod-scroll', -380)" class="scroll-arrow" title="Anterior"><i class="fas fa-chevron-left"></i></button>
+                    <button onclick="scrollHorizontal('remod-scroll', 380)" class="scroll-arrow" title="Siguiente"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- BARRA DE DESPLAZAMIENTO SUPERIOR -->
+            <div class="scroll-track-bar" onclick="scrollToTrackPosition('remod-scroll', this, event)" title="Deslizar para explorar">
+                <div class="scroll-track-thumb" id="remod-scroll-thumb"></div>
+            </div>
+
+            <div class="horizontal-scroll" id="remod-scroll" onscroll="updateScrollThumb('remod-scroll', 'remod-scroll-thumb')">
                 <div class="premium-card">
                     <img src="https://via.placeholder.com/600x400/122a46/fff?text=Cocina" alt="Cocina">
                     <div class="card-body"><h3>Cocina Moderna</h3></div>
