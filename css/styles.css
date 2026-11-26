@@ -11,6 +11,17 @@
     --gap-color: #ffffff;
 }
 
+/* Evita que la barra superior tape los títulos de las secciones */
+#servicios,
+#programacion,
+#remodelacion {
+    scroll-margin-top: 115px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body.dark-mode {
     --bg-color: #050505;
     --text-color: #f5f5f7;
